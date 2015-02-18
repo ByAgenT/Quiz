@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+	<easy>	
+		<quizQuestions>
+			<question>
+					<questionText>
+						Съешь еще этих мягких французкиx булочек, да выпей чаю.
+					</questionText>
+					<answer>111</answer>
+					<wrong1>Лалка</wrong1>
+					<wrong2>1234</wrong2>
+					<wrong3>4321</wrong3>
+			</question>
+			<question>
+					<questionText>
+						Сыр бор, но Hello World!
+					</questionText>
+					<answer>HW</answer>
+					<wrong1>NHW</wrong1>
+					<wrong2>Сыр Бор</wrong2>
+					<wrong3>Бор Сыр</wrong3>
+			</question>
+			<question>
+					<questionText>
+						Танцы с бубном
+					</questionText>
+					<answer>Танцуют все</answer>
+					<wrong1>Танцуют не все</wrong1>
+					<wrong2>Не танцуют</wrong2>
+					<wrong3>Уходим</wrong3>
+			</question>
+			<question>
+					<questionText>Ну и тут что-нибудь</questionText>
+					<answer>Угадай!</answer>
+					<wrong1>Угадай</wrong1>
+					<wrong2>Угадай</wrong2>
+					<wrong3>Угадай</wrong3>
+			</question>
+		</quizQuestions>
+		<letterQuestions>
+			<question>
+				<word>Параш..т</word>
+				<answer>Ю</answer>
+				<wrong1>У</wrong1>
+				<wrong2>Э</wrong2>
+				<wrong3>О</wrong3>
+			</question>
+			<question>
+				<word>Девч..нка</word>
+				<answer>О</answer>
+				<wrong1>Ё</wrong1>
+				<wrong2>Ю</wrong2>
+				<wrong3>И</wrong3>
+			</question>
+			<question>
+				<word>Пр..вет</word>
+				<answer>И</answer>
+				<wrong1>Ы</wrong1>
+				<wrong2>А</wrong2>
+				<wrong3>Е</wrong3>
+			</question>
+		</letterQuestions>
+	</easy>
+</data>
