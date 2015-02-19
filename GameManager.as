@@ -23,12 +23,19 @@
 		public static var mainTimeline:MovieClip;
 		public static var inited:Boolean = false;
 		
+		public static var currentQuizIndex:int = 0;
+		public static var currentLetterIndex:int = 0;
+		public static var quizAIndexes:Array = new Array(0, 1, 2, 3, 4, 5, 6);
+		public static var letterAIndexes:Array = new Array(0, 1, 2, 3, 4, 5, 6);
+		
 		public static var games:Array = new Array();
 		
 		public function GameManager(stage:Stage) 
 		{
 			_stage = stage;
-			games = createGameList(20);
+			quizAIndexes = shuffleArray(quizAIndexes);
+			letterAIndexes = shuffleArray(letterAIndexes);
+			games = createGameList(14);
 			executeGame(games[_currentGame]);
 			
 		}
@@ -42,6 +49,24 @@
 				gamelist[i] = Math.round(Math.random() * (GAMES - 1)) + 1;
 			}
 			return gamelist;
+		}
+		
+		//Array shuffle alghorithm
+		private function shuffleArray(arr:Array)
+		{
+			var shuffledArray:Array = new Array(arr.length);
+			var randomPos:int = 0;
+			for (var i:int = 0; i < arr.length; i++)
+			{
+				randomPos = int(Math.random() * arr.length);
+				while (shuffledArray[randomPos] != null)
+				{
+					randomPos = int(Math.random() * arr.length);
+				}
+				shuffledArray[randomPos] = arr[i];
+			}
+			
+			return shuffledArray;
 		}
 		
 		

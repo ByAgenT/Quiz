@@ -28,6 +28,8 @@ package Games
 		var AnswerID:int;
 		
 		//Graphical obj
+		var myFormat:TextFormat = new TextFormat();
+		var myAFormat:TextFormat = new TextFormat();
 		var que:TextField = new TextField();
 		var answer:TextField = new TextField();
 		var wrongAnswer1:TextField = new TextField();
@@ -62,15 +64,15 @@ package Games
 		
 		public function getQuestion():void
 		{
-			//TODO: NON-REPEATABLE QUESTIONS VIA SHUFFLED ARRAY
 			var myXML:XML;
 			var myLoader:URLLoader = new URLLoader();
-			myLoader.load(new URLRequest("questions.xml"));
+			myLoader.load(new URLRequest("questions.dat"));
 			myLoader.addEventListener(Event.COMPLETE, processXML);
 			function processXML(e:Event)
 			{
 				myXML = new XML(e.target.data);		
-				var qid:int = Math.round(Math.random() * 2);
+				var qid:int = GameManager.quizAIndexes[GameManager.currentQuizIndex];
+				GameManager.currentQuizIndex++;
 				switch(GameManager.gameID)
 				{
 					case 1:
@@ -100,21 +102,19 @@ package Games
 		
 		public function drawGame():void
 		{
-			
-			
-			var myFormat:TextFormat = new TextFormat();
-			myFormat.size = 40;
+			//Text formatting
+			myFormat.size = 35;
 			myFormat.align = TextFormatAlign.CENTER;
 			myFormat.font = "Majestic";
 			
-			var myAFormat:TextFormat = new TextFormat();
+			//Answer text formatting
 			myAFormat.size = 35;
 			myAFormat.bold = true;
 			myAFormat.align = TextFormatAlign.LEFT;
 			myAFormat.font = "Majestic";
 			
 			que.x = 180;
-			que.y = 200;
+			que.y = 180;
 			que.selectable = false;
 			que.width = 300;
 			que.height = 300;
@@ -123,7 +123,6 @@ package Games
 			var ids:Array = new Array(0, 1, 2, 3);
 			ids = shuffleArray(ids);
 			
-			trace(wrongAnswer1.text);
 			wrongAnswer1.wordWrap = true;
 			wrongAnswer1.width = 290;
 			wrongAnswer1.height = 120;
@@ -132,7 +131,6 @@ package Games
 			wrongAnswer1.selectable = false;
 			wrongAnswer1.defaultTextFormat = myAFormat;
 			
-			trace(wrongAnswer2.text);
 			wrongAnswer2.wordWrap = true;
 			wrongAnswer2.width = 290;
 			wrongAnswer2.height = 120;
@@ -141,7 +139,6 @@ package Games
 			wrongAnswer2.selectable = false;
 			wrongAnswer2.defaultTextFormat = myAFormat;
 			
-			trace(wrongAnswer3.text);
 			wrongAnswer3.wordWrap = true;
 			wrongAnswer3.width = 290;
 			wrongAnswer3.height = 120;
@@ -150,7 +147,6 @@ package Games
 			wrongAnswer3.selectable = false;
 			wrongAnswer3.defaultTextFormat = myAFormat;
 			
-			trace(answer.text);
 			answer.wordWrap = true;
 			answer.width = 290;
 			answer.height = 120;
@@ -159,67 +155,14 @@ package Games
 			answer.selectable = false;
 			answer.defaultTextFormat = myAFormat;
 			
-			
-			answer.addEventListener(MouseEvent.MOUSE_OVER, ahighlight);
-			function ahighlight(e:Event)
-			{
-				myAFormat.underline = true;
-				answer.defaultTextFormat = myAFormat;
-				answer.text = answer.text;
-				
-			}
-			answer.addEventListener(MouseEvent.MOUSE_OUT, adehighlight);
-			function adehighlight(e:Event)
-			{
-				myAFormat.underline = false;
-				answer.defaultTextFormat = myAFormat;
-				answer.text = answer.text;
-			}
-			wrongAnswer1.addEventListener(MouseEvent.MOUSE_OVER, highlight1);
-			function highlight1(e:Event)
-			{
-				myAFormat.underline = true;
-				wrongAnswer1.defaultTextFormat = myAFormat;
-				wrongAnswer1.text = wrongAnswer1.text;
-				
-			}
-			wrongAnswer1.addEventListener(MouseEvent.MOUSE_OUT, dehighlight1);
-			function dehighlight1(e:Event)
-			{
-				myAFormat.underline = false;
-				wrongAnswer1.defaultTextFormat = myAFormat;
-				wrongAnswer1.text = wrongAnswer1.text;
-			}
-			wrongAnswer2.addEventListener(MouseEvent.MOUSE_OVER, highlight2);
-			function highlight2(e:Event)
-			{
-				myAFormat.underline = true;
-				wrongAnswer2.defaultTextFormat = myAFormat;
-				wrongAnswer2.text = wrongAnswer2.text;
-				
-			}
-			wrongAnswer2.addEventListener(MouseEvent.MOUSE_OUT, dehighlight2);
-			function dehighlight2(e:Event)
-			{
-				myAFormat.underline = false;
-				wrongAnswer2.defaultTextFormat = myAFormat;
-				wrongAnswer2.text = wrongAnswer2.text;
-			}
-			wrongAnswer3.addEventListener(MouseEvent.MOUSE_OVER, highlight3);
-			function highlight3(e:Event)
-			{
-				myAFormat.underline = true;
-				wrongAnswer3.defaultTextFormat = myAFormat;
-				wrongAnswer3.text = wrongAnswer3.text;
-				
-			}
-			wrongAnswer3.addEventListener(MouseEvent.MOUSE_OUT, dehighlight3);
-			function dehighlight3(e:Event)
-			{
-				myAFormat.underline = false;
-				wrongAnswer3.defaultTextFormat = myAFormat;
-				wrongAnswer3.text = wrongAnswer3.text;
-			}
+			answer.addEventListener(MouseEvent.MOUSE_OVER, highlight);
+			answer.addEventListener(MouseEvent.MOUSE_OUT, dehighlight);
+			wrongAnswer1.addEventListener(MouseEvent.MOUSE_OVER, highlight);
+			wrongAnswer1.addEventListener(MouseEvent.MOUSE_OUT, dehighlight);
+			wrongAnswer2.addEventListener(MouseEvent.MOUSE_OVER, highlight);
+			wrongAnswer2.addEventListener(MouseEvent.MOUSE_OUT, dehighlight);
+			wrongAnswer3.addEventListener(MouseEvent.MOUSE_OVER, highlight);
+			wrongAnswer3.addEventListener(MouseEvent.MOUSE_OUT, dehighlight);
 			
 			answer.addEventListener(MouseEvent.CLICK, commitAnswer);
 			wrongAnswer1.addEventListener(MouseEvent.CLICK, commitWrong);
@@ -231,6 +174,20 @@ package Games
 			_stage.addChild(wrongAnswer1);
 			_stage.addChild(wrongAnswer2);
 			_stage.addChild(wrongAnswer3);
+		}
+		
+		private function highlight(e:Event)
+		{
+			myAFormat.underline = true;
+			e.currentTarget.defaultTextFormat = myAFormat;
+			e.currentTarget.text = e.currentTarget.text;
+		}
+		
+		private function dehighlight(e:Event)
+		{
+			myAFormat.underline = false;
+			e.currentTarget.defaultTextFormat = myAFormat;
+			e.currentTarget.text = e.currentTarget.text;
 		}
 		
 		private function screenClean()

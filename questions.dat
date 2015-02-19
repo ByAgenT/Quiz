@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+	<easy>
+		<quizQuestions>
+			<question>
+				<questionText>
+				Как называется раздел науки о языке, в котором изучаются правила написания слов? 
+				</questionText>
+				<answer>Орфография </answer>
+				<wrong1>Орфоэпия </wrong1>
+				<wrong2>Морфология </wrong2>
+				<wrong3>Лексика </wrong3>
+			</question>
+			<question>
+				<questionText>
+				Найдите	"лишний" вариант.	
+				</questionText>
+				<answer>Привык кл...няться </answer>
+				<wrong1>Низкий покл...н </wrong1>
+				<wrong2>Вежливо покл...ниться </wrong2>
+				<wrong3>Откл...ниться от темы </wrong3>
+			</question>
+			<question>
+				<questionText>
+				Определите значение приставки при- в словах: приехать, прибрести, приплестись. 	
+				</questionText>
+				<answer>Приближения </answer>
+				<wrong1>Присоединения </wrong1>
+				<wrong2>Прибавления </wrong2>
+				<wrong3>Слабой меры действия </wrong3>
+			</question>
+			<question>
+				<questionText>
+				Найдите "лишний" фразеологический оборот. 
+				</questionText>
+				<answer>За тридевять земель. </answer>
+				<wrong1>Рукой подать. </wrong1>
+				<wrong2>В двух шагах. </wrong2>
+				<wrong3>Под самым носом. </wrong3>
+			</question>
+			<question>
+				<questionText>
+				Чем различаются слова в каждой паре: cурок-урок, стой-сто, рост-рос. 
+				</questionText>
+				<answer>Одним звуком. </answer>
+				<wrong1>Первым звуком. </wrong1>
+				<wrong2>Количеством звуков. </wrong2>
+				<wrong3>Ударением. </wrong3>
+			</question>
+			<question>
+				<questionText>
+				В каком слове 4 буквы, но 5 звуков? 
+				</questionText>
+				<answer>Маяк </answer>
+				<wrong1>Клюв </wrong1>
+				<wrong2>Порт </wrong2>
+				<wrong3>Край </wrong3>
+			</question>
+			<question>
+				<questionText>
+				 К какому понятию относится данное определение? "Выделение одного из слогов с большей силой при произнесении слова". 	
+				</questionText>
+				<answer>Ударение </answer>
+				<wrong1>Фонетика </wrong1>
+				<wrong2>Орфоэпия </wrong2>
+				<wrong3>Графика </wrong3>
+			</question>
+		</quizQuestions>
+		<letterQuestions>
+			<question>
+				<word>
+					Слово с начальной буквой - З 	
+				</word>
+				<answer>..доровье </answer>
+				<wrong1>..горяча </wrong1>
+				<wrong2>..делать </wrong2>
+				<wrong3>..бежать </wrong3>
+			</question>
+			<question>
+				<word>
+					Найдите слово с непроизносимой согласной. 	
+				</word>
+				<answer>Ярос..ный </answer>
+				<wrong1>Яс..ный </wrong1>
+				<wrong2>Прекрас..ный </wrong2>
+				<wrong3>Телес..ный </wrong3>
+			</question>
+			<question>
+				<word>
+					В какой группе слов нужно вставить гласную И? 	
+				</word>
+				<answer>Р...фма, с...гнал, ш...нель. </answer>
+				<wrong1>Г...роизм, д...виз, л...генда. </wrong1>
+				<wrong2>Ид...ология, р...сурсы, с...зон. </wrong2>
+				<wrong3>В...личина, в...теран, р...ликвия. </wrong3>
+			</question>
+			<question>
+				<word>
+					В какой группе слов нужно вставить гласную а? 
+				</word>
+				<answer>Б..йдарка, к..в..лерия, м..ршрут. </answer>
+				<wrong1>Р..весник, с..лдат, б..гатырь. </wrong1>
+				<wrong2>Д..клад, об..рона, п..стамент. </wrong2>
+				<wrong3>К..лос, м..ральный, ..белиск. </wrong3>
+			</question>
+			<question>
+				<word>
+					Найдите однокоренные слова с чередующимися согласными в корне. 	
+				</word>
+				<answer>Сухой, сушить. </answer>
+				<wrong1>Сбор, соберу. </wrong1>
+				<wrong2>Дружок, дружочек. </wrong2>
+				<wrong3>Скачок, скачка. </wrong3>
+			</question>
+			<question>
+				<word>
+					Написание каких слов подчинено следующему правилу? «Написание гласных корня, не проверяемых ударением, следует запомнить»  
+				</word>
+				<answer>Базар, завтрак </answer>
+				<wrong1>Уплотнять, долина </wrong1>
+				<wrong2>Проглотить, гостиница </wrong2>
+				<wrong3>Уплатить, отдаление </wrong3>
+			</question>
+			<question>
+				<word>
+					Укажите лишнее слово. 	
+				</word>
+				<answer>(пол)лета </answer>
+				<wrong1>(пол)ведра </wrong1>
+				<wrong2>(пол)пути </wrong2>
+				<wrong3>(пол)романа </wrong3>
+			</question>
+		</letterQuestions>
+	</easy>
+	<medium>
+		<quizQuestions>
+			<question>
+				<questionText>
+					Найдите	однозначное слово. 
+				</questionText>
+				<answer>Мотоцикл </answer>
+				<wrong1>Аппарат </wrong1>
+				<wrong2>Барабанить </wrong2>
+				<wrong3>Земля </wrong3>
+			</question>
+			<question>
+				<questionText>
+					Найдите	существительное, имеющее две формы множественного числа. 
+				</questionText>
+				<answer>Пропуск </answer>
+				<wrong1>Улица </wrong1>
+				<wrong2>Завод </wrong2>
+				<wrong3>Дом </wrong3>
+			</question>
+			<question>
+				<questionText>
+					Исключите лишнее слово. 	
+				</questionText>
+				<answer>Передатчик </answer>
+				<wrong1>Газетчик </wrong1>
+				<wrong2>Буфетчик </wrong2>
+				<wrong3>Разведчик </wrong3>
+			</question>
+			<question>
+				<questionText>
+					Определите, сколько звуков и букв в слове «ненастный». 	
+				</questionText>
+				<answer>9 букв и 8 звуков </answer>
+				<wrong1>9 букв и 7 звуков </wrong1>
+				<wrong2>9 букв и 6 звуков </wrong2>
+				<wrong3>9 букв и 10 звуков </wrong3>
+			</question>
+			<question>
+				<questionText>
+					Укажите существительное среднего рода. 	
+				</questionText>
+				<answer>Табло </answer>
+				<wrong1>Войнич </wrong1>
+				<wrong2>Тбилиси </wrong2>
+				<wrong3>Колибри </wrong3>
+			</question>
+			<question>
+				<questionText>
+					Определите, в каком ряду даны деепричастия только несовершенного вида? 	
+				</questionText>
+				<answer>Думая, стуча, поднимаясь </answer>
+				<wrong1>Внимая, затаив, собравшись </wrong1>
+				<wrong2>Готовя, одевшись, восстав </wrong2>
+				<wrong3>Подкупив, опершись, творя </wrong3>
+			</question>
+			<question>
+				<questionText>
+					Какое из прилагательных имеет только краткую форму?	 
+				</questionText>
+				<answer>Горазд </answer>
+				<wrong1>Умен </wrong1>
+				<wrong2>Глубок </wrong2>
+				<wrong3>Прост </wrong3>
+			</question>
+		</quizQuestions>
+		<letterQuestions>
+			<question>
+				<word>
+					Выберите строку с приставкой без-. 	
+				</word>
+				<answer>Бе..граничный, бе..заветный </answer>
+				<wrong1>Бе..крайний, бе..цельный </wrong1>
+				<wrong2>Бе..конечный, бе..толковый </wrong2>
+				<wrong3>Бе..правный, бе..совестный </wrong3>
+			</question>
+			<question>
+				<word>
+					В каком ряду пропущена одна и та же буква? 	
+				</word>
+				<answer>П..стреет, т…нистый, ст..клянный, см…ниться </answer>
+				<wrong1>Обн..вление, в…лнистый, изб…роздить, всп…хать </wrong1>
+				<wrong2>Сп…сатель, м…лотить, ист…пник, пог..стить </wrong2>
+				<wrong3>В…днелся, ч…слительное, ст…хотворение, пос…лилось </wrong3>
+			</question>
+			<question>
+				<word>
+					В каком ряду во всех словах пропущена буква А? 	
+				</word>
+				<answer>Предв..рительный, ск… кать, военная к…мпания </answer>
+				<wrong1>Отр..сль, сокр..щать, р..скошный </wrong1>
+				<wrong2>Благосл..вить, безотл..гательный, ди..гональ </wrong2>
+				<wrong3>Предпол…жительно, прор…стать, п..норама </wrong3>
+			</question>
+			<question>
+				<word>
+					Определите строку, в которой написание слов подчинено следующему правилу. "В корнях слов после шипящих пишется Ё, если есть однокоренное слово с буквой Е". 	
+				</word>
+				<answer>Ж...рдочка, пощ...чина. </answer>
+				<wrong1>Подж...г (дома), ож...г (руки). </wrong1>
+				<wrong2>Ч...порный, маж...рный. </wrong2>
+				<wrong3>Ш...в, крыж...вник. </wrong3>
+			</question>
+			<question>
+				<word>
+					В какой строке написание слов с элементом пол- слитное?	 
+				</word>
+				<answer>(Пол)тысячи, (пол)миллиона. </answer>
+				<wrong1>(Пол)очка, (пол)ложки. </wrong1>
+				<wrong2>(Пол)Европы, (пол)Азии. </wrong2>
+				<wrong3>(Пол)лета, (пол)оборота. </wrong3>
+			</question>
+			<question>
+				<word>
+					В какой группе слов нужно вставить гласную о? 
+				</word>
+				<answer>Д..стоинство, м..нтаж, к..нгресс. </answer>
+				<wrong1>Л..ндшафт, м...трос, п..триотизм. </wrong1>
+				<wrong2>Б..гряный, к..нонада, с..лон. </wrong2>
+				<wrong3>Тр..диция, ..бажур, с..лфетка. </wrong3>
+			</question>
+			<question>
+				<word>
+					В какой строке написание слов с элементом пол- дефисное? 
+				</word>
+				<answer>(Пол)океана, (пол)яблока. </answer>
+				<wrong1>(Пол)порции, (пол)смены. </wrong1>
+				<wrong2>(Пол)второго, (пол)цены. </wrong2>
+				<wrong3>(Пол)сотни, (пол)неба. </wrong3>
+			</question>
+		</letterQuestions>		
+	</medium>
+	<hard>
+		<quizQuestions>
+			<question>
+				<questionText>
+					Выделите слово, не имеющее суффикса -н-. 	
+				</questionText>
+				<answer>Бледный </answer>
+				<wrong1>Бумажный </wrong1>
+				<wrong2>Весенний </wrong2>
+				<wrong3>Стальной </wrong3>
+			</question>
+			<question>
+				<questionText>
+					Какие существительные вообще не имеют рода?	 
+				</questionText>
+				<answer>Счеты, весы </answer>
+				<wrong1>Сироты, плаксы </wrong1>
+				<wrong2>Ночи, вещи </wrong2>
+				<wrong3>Плащи, платки </wrong3>
+			</question>
+			<question>
+				<questionText>
+					Какое слово не относится к существительным, употребляющимся только во множественном числе? 	
+				</questionText>
+				<answer>Хинди </answer>
+				<wrong1>Ворота </wrong1>
+				<wrong2>Карпаты </wrong2>
+				<wrong3>Сливки </wrong3>
+			</question>
+			<question>
+				<questionText>
+					С каким из глаголов нельзя употребить наречие кратко? 	
+				</questionText>
+				<answer>Изобразить </answer>
+				<wrong1>Изложить </wrong1>
+				<wrong2>Рассказать </wrong2>
+				<wrong3>Остановиться </wrong3>
+			</question>
+			<question>
+				<questionText>
+					Укажите глаголы только II спряжения. 	
+				</questionText>
+				<answer>Труд-шься, смотр-т, завис-м </answer>
+				<wrong1>Чита-т, зелене-т, та-т </wrong1>
+				<wrong2>Терп-м, скаж-шь, стел-т </wrong2>
+				<wrong3>Стро-тся, сообража-шь, хвал-м </wrong3>
+			</question>
+			<question>
+				<questionText>
+					Определите, в какой строке не с причастием пишется слитно. 	
+				</questionText>
+				<answer>(Не) погасший костёр </answer>
+				<wrong1>Трава (не) скошена </wrong1>
+				<wrong2>Ничем (не) нарушаемая тишина </wrong2>
+				<wrong3>Задача (не) решённая, только начатая </wrong3>
+			</question>
+			<question>
+				<questionText>
+					Определите способ образования видов глагола. Искать - найти, садиться - сесть.	 
+				</questionText>
+				<answer>От разных основ </answer>
+				<wrong1>Приставочный </wrong1>
+				<wrong2>Суффиксальный </wrong2>
+				<wrong3>Чередование в корне </wrong3>
+			</question>
+		</quizQuestions>
+
+
+		<letterQuestions>
+			<question>
+				<word>
+					Укажите вариант с О после шипящих. 	
+				</word>
+				<answer>Изж..га, лодч..нка, свеж.., смеш..н </answer>
+				<wrong1>Ш..пот, круч..ный, щ..лочь </wrong1>
+				<wrong2>Береж..т, туш..нка, ж..лудь, печ..ный </wrong2>
+				<wrong3>Холщ..вый, зайч..нок, ч..ткий </wrong3>
+			</question>
+			<question>
+				<word>
+					В каких словах есть Ъ? 	
+				</word>
+				<answer>Сверх..естественно, пред..январский, трех..ярусный </answer>
+				<wrong1>С..экономил, сверх..интересно, от..утюжить </wrong1>
+				<wrong2>П..еса, об..ект, с..узить </wrong2>
+				<wrong3>Пред..юбилейный, барел..еф, из..ясняться </wrong3>
+			</question>
+			<question>
+				<word>
+					Выберите верный вариант написания слов. 	
+				</word>
+				<answer>Конечный результат, папин плащ, настежь </answer>
+				<wrong1>Лес дремуч, намажьте маслом, много училищь </wrong1>
+				<wrong2>Замуж, портьера, пустош </wrong2>
+				<wrong3>Среди тучь, почки, сможешь </wrong3>
+			</question>
+			<question>
+				<word>
+					В каком ряду во всех словах после шипящих ь не пишется? 	
+				</word>
+				<answer>Замуж…, мимо рощ…, дремуч… </answer>
+				<wrong1>Береч…, помощ…, сплош… </wrong1>
+				<wrong2>Навзнич…, стрич…, отреж…те </wrong2>
+				<wrong3>Наотмаш…, настеж…, обеспеч…те </wrong3>
+			</question>
+			<question>
+				<word>
+					Найдите "лишний" вариант. 	
+				</word>
+				<answer>К...сательная линия. </answer>
+				<wrong1>Лёгкое прик...сновение. </wrong1>
+				<wrong2>Неприк...сновенный запас. </wrong2>
+				<wrong3>Точки соприк...сновения. </wrong3>
+			</question>
+			<question>
+				<word>
+					Укажите лишний ряд.	 
+				</word>
+				<answer>Разл..чить, р..скошный, гр..за. </answer>
+				<wrong1>Зам..рать, к..снуться, соб..рать. </wrong1>
+				<wrong2>Расст..лить, бл..стеть, выр..щен. </wrong2>
+				<wrong3>Возр..ст, ст..рать, по...жить. </wrong3>
+			</question>
+			<question>
+				<word>
+					В каком ряду во всех словах пропущена гласная И? 	
+				</word>
+				<answer>В лекци.., вид..т, н.. разу. </answer>
+				<wrong1>Знам..ни, н...что иное, как. </wrong1>
+				<wrong2>Пр..образовать, н..кто иной. </wrong2>
+				<wrong3>Бре...т, несгора..мый, вещ..вой. </wrong3>
+			</question>
+		</letterQuestions>
+	</hard>
+</data>

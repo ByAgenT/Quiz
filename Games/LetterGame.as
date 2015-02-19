@@ -26,6 +26,8 @@ package Games
 		
 		
 		//Graphical elements
+		var myFormat:TextFormat = new TextFormat();
+		var myAFormat:TextFormat = new TextFormat();
 		private var _word:TextField = new TextField();
 		private var que:TextField = new TextField();
 		private var _answers:Array = new Array();
@@ -66,11 +68,12 @@ package Games
 		{
 			var myXML:XML;
 			var myLoader:URLLoader = new URLLoader();
-			myLoader.load(new URLRequest("questions.xml"));
+			myLoader.load(new URLRequest("questions.dat"));
 			myLoader.addEventListener(Event.COMPLETE, processXML);
 			function processXML(e:Event)
 			{
-				var id:int = Math.round(Math.random() * (3 - 1));
+				var id:int = GameManager.letterAIndexes[GameManager.currentLetterIndex];
+				GameManager.currentLetterIndex++;
 				myXML = new XML(e.target.data);	
 				switch(GameManager.gameID)
 				{
@@ -80,6 +83,20 @@ package Games
 						wrongAnswer1.text = myXML.easy.letterQuestions.question[id].wrong1;
 						wrongAnswer2.text = myXML.easy.letterQuestions.question[id].wrong2;
 						wrongAnswer3.text = myXML.easy.letterQuestions.question[id].wrong3;
+						break;
+					case 2:
+						que.text = myXML.medium.letterQuestions.question[id].word;
+						answer.text = myXML.medium.letterQuestions.question[id].answer;
+						wrongAnswer1.text = myXML.meduim.letterQuestions.question[id].wrong1;
+						wrongAnswer2.text = myXML.medium.letterQuestions.question[id].wrong2;
+						wrongAnswer3.text = myXML.medium.letterQuestions.question[id].wrong3;
+						break;
+					case 3:
+						que.text = myXML.hard.letterQuestions.question[id].word;
+						answer.text = myXML.hard.letterQuestions.question[id].answer;
+						wrongAnswer1.text = myXML.hard.letterQuestions.question[id].wrong1;
+						wrongAnswer2.text = myXML.hard.letterQuestions.question[id].wrong2;
+						wrongAnswer3.text = myXML.hard.letterQuestions.question[id].wrong3;
 						break;
 				}
 				
@@ -91,13 +108,11 @@ package Games
 		public function DrawGame()
 		{
 			//Text formatting
-			var myFormat:TextFormat = new TextFormat();
-			myFormat.size = 55;
+			myFormat.size = 35;
 			myFormat.align = TextFormatAlign.CENTER;
 			myFormat.font = "Majestic"; //FONT
 			
 			//Text formatting for answer
-			var myAFormat:TextFormat = new TextFormat();
 			myAFormat.size = 35;
 			myAFormat.bold = true;
 			myAFormat.align = TextFormatAlign.LEFT;
@@ -106,7 +121,7 @@ package Games
 			//static question props
 			que.wordWrap = true;		
 			que.x = 180;
-			que.y = 190;
+			que.y = 180;
 			que.selectable = false;
 			que.width = 300;
 			que.height = 300;
@@ -160,66 +175,14 @@ package Games
 			answer.selectable = false;
 			answer.defaultTextFormat = myAFormat;
 			
-			answer.addEventListener(MouseEvent.MOUSE_OVER, ahighlight);
-			function ahighlight(e:Event)
-			{
-				myAFormat.underline = true;
-				answer.defaultTextFormat = myAFormat;
-				answer.text = answer.text;
-				
-			}
-			answer.addEventListener(MouseEvent.MOUSE_OUT, adehighlight);
-			function adehighlight(e:Event)
-			{
-				myAFormat.underline = false;
-				answer.defaultTextFormat = myAFormat;
-				answer.text = answer.text;
-			}
-			wrongAnswer1.addEventListener(MouseEvent.MOUSE_OVER, highlight1);
-			function highlight1(e:Event)
-			{
-				myAFormat.underline = true;
-				wrongAnswer1.defaultTextFormat = myAFormat;
-				wrongAnswer1.text = wrongAnswer1.text;
-				
-			}
-			wrongAnswer1.addEventListener(MouseEvent.MOUSE_OUT, dehighlight1);
-			function dehighlight1(e:Event)
-			{
-				myAFormat.underline = false;
-				wrongAnswer1.defaultTextFormat = myAFormat;
-				wrongAnswer1.text = wrongAnswer1.text;
-			}
-			wrongAnswer2.addEventListener(MouseEvent.MOUSE_OVER, highlight2);
-			function highlight2(e:Event)
-			{
-				myAFormat.underline = true;
-				wrongAnswer2.defaultTextFormat = myAFormat;
-				wrongAnswer2.text = wrongAnswer2.text;
-				
-			}
-			wrongAnswer2.addEventListener(MouseEvent.MOUSE_OUT, dehighlight2);
-			function dehighlight2(e:Event)
-			{
-				myAFormat.underline = false;
-				wrongAnswer2.defaultTextFormat = myAFormat;
-				wrongAnswer2.text = wrongAnswer2.text;
-			}
-			wrongAnswer3.addEventListener(MouseEvent.MOUSE_OVER, highlight3);
-			function highlight3(e:Event)
-			{
-				myAFormat.underline = true;
-				wrongAnswer3.defaultTextFormat = myAFormat;
-				wrongAnswer3.text = wrongAnswer3.text;
-				
-			}
-			wrongAnswer3.addEventListener(MouseEvent.MOUSE_OUT, dehighlight3);
-			function dehighlight3(e:Event)
-			{
-				myAFormat.underline = false;
-				wrongAnswer3.defaultTextFormat = myAFormat;
-				wrongAnswer3.text = wrongAnswer3.text;
-			}
+			answer.addEventListener      (MouseEvent.MOUSE_OVER, highlight);
+			answer.addEventListener      (MouseEvent.MOUSE_OUT, dehighlight);
+			wrongAnswer1.addEventListener(MouseEvent.MOUSE_OVER, highlight);
+			wrongAnswer1.addEventListener(MouseEvent.MOUSE_OUT, dehighlight);
+			wrongAnswer2.addEventListener(MouseEvent.MOUSE_OVER, highlight);
+			wrongAnswer2.addEventListener(MouseEvent.MOUSE_OUT, dehighlight);
+			wrongAnswer3.addEventListener(MouseEvent.MOUSE_OVER, highlight);
+			wrongAnswer3.addEventListener(MouseEvent.MOUSE_OUT, dehighlight);
 			
 			//Event Listeners
 			answer.addEventListener(MouseEvent.CLICK, commitAnswer);
@@ -235,6 +198,21 @@ package Games
 			_stage.addChild(wrongAnswer2);
 			_stage.addChild(wrongAnswer3);
 		}
+		
+		private function highlight(e:Event)
+		{
+			myAFormat.underline = true;
+			e.currentTarget.defaultTextFormat = myAFormat;
+			e.currentTarget.text = e.currentTarget.text;
+		}
+		
+		private function dehighlight(e:Event)
+		{
+			myAFormat.underline = false;
+			e.currentTarget.defaultTextFormat = myAFormat;
+			e.currentTarget.text = e.currentTarget.text;
+		}
+		
 		
 		//Remove children from Stage
 		private function screenClean()
