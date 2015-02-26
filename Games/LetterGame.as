@@ -87,7 +87,7 @@ package Games
 					case 2:
 						que.text = myXML.medium.letterQuestions.question[id].word;
 						answer.text = myXML.medium.letterQuestions.question[id].answer;
-						wrongAnswer1.text = myXML.meduim.letterQuestions.question[id].wrong1;
+						wrongAnswer1.text = myXML.medium.letterQuestions.question[id].wrong1;
 						wrongAnswer2.text = myXML.medium.letterQuestions.question[id].wrong2;
 						wrongAnswer3.text = myXML.medium.letterQuestions.question[id].wrong3;
 						break;
