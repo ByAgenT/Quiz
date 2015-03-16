@@ -9,6 +9,8 @@ package Games
 	import flash.net.URLLoader;
 	import flash.net.URLRequest;
 	import flash.text.TextField;
+	import flash.utils.Timer;
+	import flash.events.TimerEvent;
 	
 	/**
 	 * ...
@@ -101,62 +103,62 @@ package Games
 		}
 		
 		public function drawGame():void
-		{
+		{			
 			//Text formatting
-			myFormat.size = 35;
-			myFormat.align = TextFormatAlign.CENTER;
-			myFormat.font = "Majestic";
+			myFormat.size         = 35;
+			myFormat.align        = TextFormatAlign.CENTER;
+			myFormat.font         = "Majestic";
 			
 			//Answer text formatting
-			myAFormat.size = 35;
-			myAFormat.bold = true;
-			myAFormat.align = TextFormatAlign.LEFT;
-			myAFormat.font = "Majestic";
+			myAFormat.size        = 33;
+			//myAFormat.bold      = true;
+			myAFormat.align       = TextFormatAlign.LEFT;
+			myAFormat.font        = "Majestic";
 			
-			que.x = 180;
-			que.y = 180;
-			que.selectable = false;
-			que.width = 300;
-			que.height = 300;
+			que.x                 = 180;
+			que.y             	  = 180;
+			que.selectable        = false;
+			que.width             = 300;
+			que.height            = 300;
 			que.defaultTextFormat = myFormat;
 			
 			var ids:Array = new Array(0, 1, 2, 3);
 			ids = shuffleArray(ids);
 			
-			wrongAnswer1.wordWrap = true;
-			wrongAnswer1.width = 290;
-			wrongAnswer1.height = 120;
-			wrongAnswer1.x = coordsx[ids[0]];
-			wrongAnswer1.y = coordsy[ids[0]];
-			wrongAnswer1.selectable = false;
+			wrongAnswer1.wordWrap          = true;
+			wrongAnswer1.width             = 290;
+			wrongAnswer1.height            = 120;
+			wrongAnswer1.x                 = coordsx[ids[0]];
+			wrongAnswer1.y                 = coordsy[ids[0]];
+			wrongAnswer1.selectable        = false;
 			wrongAnswer1.defaultTextFormat = myAFormat;
 			
-			wrongAnswer2.wordWrap = true;
-			wrongAnswer2.width = 290;
-			wrongAnswer2.height = 120;
-			wrongAnswer2.x = coordsx[ids[1]];
-			wrongAnswer2.y = coordsy[ids[1]];
-			wrongAnswer2.selectable = false;
+			wrongAnswer2.wordWrap          = true;
+			wrongAnswer2.width             = 290;
+			wrongAnswer2.height            = 120;
+			wrongAnswer2.x                 = coordsx[ids[1]];
+			wrongAnswer2.y                 = coordsy[ids[1]];
+			wrongAnswer2.selectable        = false;
 			wrongAnswer2.defaultTextFormat = myAFormat;
 			
-			wrongAnswer3.wordWrap = true;
-			wrongAnswer3.width = 290;
-			wrongAnswer3.height = 120;
-			wrongAnswer3.x = coordsx[ids[2]];
-			wrongAnswer3.y = coordsy[ids[2]];
-			wrongAnswer3.selectable = false;
+			wrongAnswer3.wordWrap          = true;
+			wrongAnswer3.width             = 290;
+			wrongAnswer3.height            = 120;
+			wrongAnswer3.x                 = coordsx[ids[2]];
+			wrongAnswer3.y                 = coordsy[ids[2]];
+			wrongAnswer3.selectable        = false;
 			wrongAnswer3.defaultTextFormat = myAFormat;
 			
-			answer.wordWrap = true;
-			answer.width = 290;
-			answer.height = 120;
-			answer.x = coordsx[ids[3]];
-			answer.y = coordsy[ids[3]];
-			answer.selectable = false;
-			answer.defaultTextFormat = myAFormat;
+			answer.wordWrap                = true;
+			answer.width                   = 290;
+			answer.height                  = 120;
+			answer.x                       = coordsx[ids[3]];
+			answer.y                       = coordsy[ids[3]];
+			answer.selectable              = false;
+			answer.defaultTextFormat       = myAFormat;
 			
-			answer.addEventListener(MouseEvent.MOUSE_OVER, highlight);
-			answer.addEventListener(MouseEvent.MOUSE_OUT, dehighlight);
+			answer.addEventListener      (MouseEvent.MOUSE_OVER, highlight);
+			answer.addEventListener      (MouseEvent.MOUSE_OUT, dehighlight);
 			wrongAnswer1.addEventListener(MouseEvent.MOUSE_OVER, highlight);
 			wrongAnswer1.addEventListener(MouseEvent.MOUSE_OUT, dehighlight);
 			wrongAnswer2.addEventListener(MouseEvent.MOUSE_OVER, highlight);
@@ -164,7 +166,7 @@ package Games
 			wrongAnswer3.addEventListener(MouseEvent.MOUSE_OVER, highlight);
 			wrongAnswer3.addEventListener(MouseEvent.MOUSE_OUT, dehighlight);
 			
-			answer.addEventListener(MouseEvent.CLICK, commitAnswer);
+			answer.addEventListener      (MouseEvent.CLICK, commitAnswer);
 			wrongAnswer1.addEventListener(MouseEvent.CLICK, commitWrong);
 			wrongAnswer2.addEventListener(MouseEvent.CLICK, commitWrong);
 			wrongAnswer3.addEventListener(MouseEvent.CLICK, commitWrong);
@@ -190,6 +192,39 @@ package Games
 			e.currentTarget.text = e.currentTarget.text;
 		}
 		
+		public static function delayedFunctionCall(delay:int, func:Function)
+		{
+			var timer:Timer = new Timer(delay, 1);
+			timer.addEventListener(TimerEvent.TIMER, func);
+			timer.start();
+		}
+		
+		private function commitAnswer(e:MouseEvent)
+		{
+			myFormat.size = 50;
+			myFormat.bold = true;
+			que.defaultTextFormat = myFormat;
+			que.textColor = 0x00a000;
+			que.text = "Правильно";
+			removeListeners();
+			delayedFunctionCall(2000, function(e:Event) { endUp(); } );
+			trace("Right Answer");
+			GameManager.Score++;
+		}
+		
+		private function commitWrong(e:MouseEvent)
+		{	
+			myFormat.size = 50;
+			myFormat.bold = true;
+			que.defaultTextFormat = myFormat;
+			que.textColor = 0xff0000;
+			que.text = "Неправильно";
+			removeListeners();
+			delayedFunctionCall(2000, function(e:Event) { endUp(); } );
+			trace("Wrong Answer");
+		}
+		
+		//------------CLEANERS-----------------------------------------------------------------
 		private function screenClean()
 		{
 			_stage.removeChild(que);
@@ -199,21 +234,20 @@ package Games
 			_stage.removeChild(wrongAnswer3);
 		}
 		
-		private function commitAnswer(e:MouseEvent)
+		private function removeListeners()
 		{
-			trace("Right Answer");
-			screenClean();
-			GameManager.changeGame();
-			GameManager.Score++;
+			answer.removeEventListener      (MouseEvent.CLICK, commitAnswer);
+			wrongAnswer1.removeEventListener(MouseEvent.CLICK, commitWrong);
+			wrongAnswer2.removeEventListener(MouseEvent.CLICK, commitWrong);
+			wrongAnswer3.removeEventListener(MouseEvent.CLICK, commitWrong);
 		}
 		
-		private function commitWrong(e:MouseEvent)
-		{	
-			trace("Wrong Answer");
+		private function endUp()
+		{
 			screenClean();
 			GameManager.changeGame();
 		}
-		
+		//--------------------------------------------------------------------------------------
 	}
 
 }
