@@ -46,24 +46,6 @@ package Games
 			drawGame();
 		}
 		
-		
-		private function shuffleArray(arr:Array)
-		{
-			var shuffledArray:Array = new Array(arr.length);
-			var randomPos:int = 0;
-			for (var i:int = 0; i < arr.length; i++)
-			{
-				randomPos = int(Math.random() * arr.length);
-				while (shuffledArray[randomPos] != null)
-				{
-					randomPos = int(Math.random() * arr.length);
-				}
-				shuffledArray[randomPos] = arr[i];
-			}
-			
-			return shuffledArray;
-		}
-		
 		public function getQuestion():void
 		{
 			var myXML:XML;
@@ -124,7 +106,7 @@ package Games
 			que.defaultTextFormat = myFormat;
 			
 			var ids:Array = new Array(0, 1, 2, 3);
-			ids = shuffleArray(ids);
+			ids = Support.shuffleArray(ids);
 			
 			wrongAnswer1.wordWrap          = true;
 			wrongAnswer1.width             = 290;
@@ -193,25 +175,18 @@ package Games
 			e.currentTarget.text = e.currentTarget.text;
 		}
 		
-		public static function delayedFunctionCall(delay:int, func:Function)
-		{
-			var timer:Timer = new Timer(delay, 1);
-			timer.addEventListener(TimerEvent.TIMER, func);
-			timer.start();
-		}
-		
 		private function commitAnswer(e:MouseEvent)
 		{
 			myFormat.size = 50;
 			myFormat.bold = true;
 			que.defaultTextFormat = myFormat;
-			que.textColor = 0x00a000;
+			que.textColor = 0x005000;
 			que.text = "Правильно";
-			answer.textColor = 0x00a000;
+			answer.textColor = 0x005000;
 			removeListeners();
-			delayedFunctionCall(2000, function(e:Event) { endUp(); } );
+			Support.delayedFunctionCall(2000, function(e:Event) { endUp(); } );
 			trace("Right Answer");
-			GameManager.Score++;
+			GameManager.Score += 0.7;
 		}
 		
 		private function commitWrong(e:MouseEvent)
@@ -219,12 +194,12 @@ package Games
 			myFormat.size = 50;
 			myFormat.bold = true;
 			que.defaultTextFormat = myFormat;
-			que.textColor = 0xff0000;
+			que.textColor = 0x700000;
 			que.text = "Неправильно";
-			e.currentTarget.textColor = 0xff0000;
-			answer.textColor = 0x00a000;
+			e.currentTarget.textColor = 0x700000;
+			answer.textColor = 0x005000;
 			removeListeners();
-			delayedFunctionCall(2000, function(e:Event) { endUp(); } );
+			Support.delayedFunctionCall(2000, function(e:Event) { endUp(); } );
 			trace("Wrong Answer");
 		}
 		
