@@ -6,28 +6,28 @@
 				<questionText>
 				Как называется раздел науки о языке, в котором изучаются правила написания слов? 
 				</questionText>
-				<answer>Орфография </answer>
-				<wrong1>Орфоэпия </wrong1>
-				<wrong2>Морфология </wrong2>
-				<wrong3>Лексика </wrong3>
+				<answer>Орфография. </answer>
+				<wrong1>Орфоэпия. </wrong1>
+				<wrong2>Морфология. </wrong2>
+				<wrong3>Лексика. </wrong3>
 			</question>
 			<question>
 				<questionText>
 				Найдите	"лишний" вариант.	
 				</questionText>
-				<answer>Привык кл...няться </answer>
-				<wrong1>Низкий покл...н </wrong1>
-				<wrong2>Вежливо покл...ниться </wrong2>
-				<wrong3>Откл...ниться от темы </wrong3>
+				<answer>Привык кл...няться. </answer>
+				<wrong1>Низкий покл...н. </wrong1>
+				<wrong2>Вежливо покл...ниться. </wrong2>
+				<wrong3>Откл...ниться от темы. </wrong3>
 			</question>
 			<question>
 				<questionText>
 				Определите значение приставки при- в словах: приехать, прибрести, приплестись. 	
 				</questionText>
-				<answer>Приближения </answer>
-				<wrong1>Присоединения </wrong1>
-				<wrong2>Прибавления </wrong2>
-				<wrong3>Слабой меры действия </wrong3>
+				<answer>Приближения. </answer>
+				<wrong1>Присоединения. </wrong1>
+				<wrong2>Прибавления. </wrong2>
+				<wrong3>Слабой меры действия. </wrong3>
 			</question>
 			<question>
 				<questionText>
@@ -51,19 +51,19 @@
 				<questionText>
 				В каком слове 4 буквы, но 5 звуков? 
 				</questionText>
-				<answer>Маяк </answer>
-				<wrong1>Клюв </wrong1>
-				<wrong2>Порт </wrong2>
-				<wrong3>Край </wrong3>
+				<answer>Маяк. </answer>
+				<wrong1>Клюв. </wrong1>
+				<wrong2>Порт. </wrong2>
+				<wrong3>Край. </wrong3>
 			</question>
 			<question>
 				<questionText>
 				 К какому понятию относится данное определение? "Выделение одного из слогов с большей силой при произнесении слова". 	
 				</questionText>
-				<answer>Ударение </answer>
-				<wrong1>Фонетика </wrong1>
-				<wrong2>Орфоэпия </wrong2>
-				<wrong3>Графика </wrong3>
+				<answer>Ударение. </answer>
+				<wrong1>Фонетика. </wrong1>
+				<wrong2>Орфоэпия. </wrong2>
+				<wrong3>Графика. </wrong3>
 			</question>
 		</quizQuestions>
 		<letterQuestions>
@@ -71,19 +71,19 @@
 				<word>
 					Слово с начальной буквой - З 	
 				</word>
-				<answer>..доровье </answer>
-				<wrong1>..горяча </wrong1>
-				<wrong2>..делать </wrong2>
-				<wrong3>..бежать </wrong3>
+				<answer>..доровье. </answer>
+				<wrong1>..горяча. </wrong1>
+				<wrong2>..делать. </wrong2>
+				<wrong3>..бежать. </wrong3>
 			</question>
 			<question>
 				<word>
 					Найдите слово с непроизносимой согласной. 	
 				</word>
-				<answer>Ярос..ный </answer>
-				<wrong1>Яс..ный </wrong1>
-				<wrong2>Прекрас..ный </wrong2>
-				<wrong3>Телес..ный </wrong3>
+				<answer>Ярос..ный. </answer>
+				<wrong1>Яс..ный. </wrong1>
+				<wrong2>Прекрас..ный. </wrong2>
+				<wrong3>Телес..ный. </wrong3>
 			</question>
 			<question>
 				<word>
