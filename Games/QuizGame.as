@@ -182,11 +182,7 @@ package Games
 			que.defaultTextFormat = myFormat;
 			que.textColor = 0x005000;
 			que.text = "Правильно";
-<<<<<<< HEAD
-			answer.textColor = 0x00a000;
-=======
 			answer.textColor = 0x005000;
->>>>>>> Code_optimization
 			removeListeners();
 			Support.delayedFunctionCall(2000, function(e:Event) { endUp(); } );
 			trace("Right Answer");
@@ -200,13 +196,8 @@ package Games
 			que.defaultTextFormat = myFormat;
 			que.textColor = 0x700000;
 			que.text = "Неправильно";
-<<<<<<< HEAD
-			e.currentTarget.textColor = 0xff0000;
-			answer.textColor = 0x00a000;
-=======
 			e.currentTarget.textColor = 0x700000;
 			answer.textColor = 0x005000;
->>>>>>> Code_optimization
 			removeListeners();
 			Support.delayedFunctionCall(2000, function(e:Event) { endUp(); } );
 			trace("Wrong Answer");

@@ -196,11 +196,7 @@ package Games
 			myFormat.size = 50;
 			que.defaultTextFormat = myFormat;
 			que.text = "Правильно";
-<<<<<<< HEAD
-			answer.textColor = 0x00a000;
-=======
 			answer.textColor = 0x005000;
->>>>>>> Code_optimization
 			removeListeners();
 			GameManager.Score += 0.7;
 			Support.delayedFunctionCall(2000, function(e:Event) { endUp(); } );
@@ -214,13 +210,8 @@ package Games
 			myFormat.size = 50;
 			que.defaultTextFormat = myFormat;
 			que.text = "Неправильно";
-<<<<<<< HEAD
-			e.currentTarget.textColor = 0xff0000;
-			answer.textColor = 0x00a000;
-=======
 			e.currentTarget.textColor = 0x700000;
 			answer.textColor = 0x005000;
->>>>>>> Code_optimization
 			removeListeners();
 			Support.delayedFunctionCall(2000, function(e:Event) { endUp(); } );
 		}
