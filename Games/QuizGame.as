@@ -21,7 +21,7 @@ package Games
 	{
 		//Answer coordinates
 		private var coordsx:Array = new Array(560, 560, 560, 560);
-		private var coordsy:Array = new Array(140, 250, 360, 470);
+		private var coordsy:Array = new Array(135, 255, 365, 475);
 		
 		private var _stage:Stage;
 		
@@ -107,13 +107,14 @@ package Games
 			//Text formatting
 			myFormat.size         = 35;
 			myFormat.align        = TextFormatAlign.CENTER;
-			myFormat.font         = "Majestic";
+			myFormat.bold         = false;
+			myFormat.font         = "Majestic X";
 			
 			//Answer text formatting
-			myAFormat.size        = 33;
-			//myAFormat.bold      = true;
+			myAFormat.size        = 32;
+			myAFormat.bold        = false;
 			myAFormat.align       = TextFormatAlign.LEFT;
-			myAFormat.font        = "Majestic";
+			myAFormat.font        = "Majestic X";
 			
 			que.x                 = 180;
 			que.y             	  = 180;
@@ -206,6 +207,7 @@ package Games
 			que.defaultTextFormat = myFormat;
 			que.textColor = 0x00a000;
 			que.text = "Правильно";
+			answer.textColor = 0x00a000;
 			removeListeners();
 			delayedFunctionCall(2000, function(e:Event) { endUp(); } );
 			trace("Right Answer");
@@ -219,6 +221,8 @@ package Games
 			que.defaultTextFormat = myFormat;
 			que.textColor = 0xff0000;
 			que.text = "Неправильно";
+			e.currentTarget.textColor = 0xff0000;
+			answer.textColor = 0x00a000;
 			removeListeners();
 			delayedFunctionCall(2000, function(e:Event) { endUp(); } );
 			trace("Wrong Answer");

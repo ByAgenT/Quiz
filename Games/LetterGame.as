@@ -21,11 +21,9 @@ package Games
 		
 		//Answer coordinates
 		private var coordsx:Array = new Array(550, 550, 550, 550);
-		private var coordsy:Array = new Array(140, 250, 360, 470);
-		
+		private var coordsy:Array = new Array(135, 255, 365, 475);
 		
 		private var _stage:Stage;
-		
 		
 		//Graphical elements
 		var myFormat:TextFormat = new TextFormat();
@@ -112,13 +110,14 @@ package Games
 			//Text formatting
 			myFormat.size           = 35;
 			myFormat.align          = TextFormatAlign.CENTER;
-			myFormat.font           = "Majestic"; //FONT
+			myFormat.bold           = false;
+			myFormat.font           = "Majestic X"; //FONT
 			
 			//Text formatting for answer
-			myAFormat.size          = 33;
-			//myAFormat.bold        = true;
+			myAFormat.size          = 32;
+			myAFormat.bold          = false;
 			myAFormat.align         = TextFormatAlign.LEFT;
-			myAFormat.font          = "Majestic";
+			myAFormat.font          = "Majestic X";
 			
 			//static question props
 			que.wordWrap            = true;		
@@ -128,14 +127,6 @@ package Games
 			que.width               = 300;
 			que.height              = 300;
 			que.defaultTextFormat   = myFormat;
-			
-			/*//word props
-			_word.defaultTextFormat = myFormat;
-			_word.selectable        = false;
-			_word.x                 = 512;
-			_word.y                 = 130;
-			_word.width             = 300;
-			_word.height            = 100;*/
 			
 			//position id's
 			var ids:Array = new Array(0, 1, 2, 3);
@@ -230,6 +221,7 @@ package Games
 			myFormat.size = 50;
 			que.defaultTextFormat = myFormat;
 			que.text = "Правильно";
+			answer.textColor = 0x00a000;
 			removeListeners();
 			GameManager.Score++;
 			delayedFunctionCall(2000, function(e:Event) { endUp(); } );
@@ -243,6 +235,8 @@ package Games
 			myFormat.size = 50;
 			que.defaultTextFormat = myFormat;
 			que.text = "Неправильно";
+			e.currentTarget.textColor = 0xff0000;
+			answer.textColor = 0x00a000;
 			removeListeners();
 			delayedFunctionCall(2000, function(e:Event) { endUp(); } );
 		}
@@ -272,8 +266,6 @@ package Games
 			screenClean();
 			GameManager.changeGame();
 		}
-		//-----------------------------------------------------------------------------------------
-		
+		//-----------------------------------------------------------------------------------------	
 	}
-
 }
